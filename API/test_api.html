@@ -1,0 +1,63 @@
+<main>
+	<h1>API Assignment</h1>
+	<h2>A Simple Fetch API Example Using Dog API</h2>
+
+	<p>
+		Click the button below to view a random image of a dog from
+		<a href="https://dog.ceo/dog-api/">Dog API</a>. This is an example that uses
+		the Fetch API to get data from a free service.
+	</p>
+
+	<img
+		src="https://images.dog.ceo/breeds/redbone/n02090379_3899.jpg"
+		id="myImage"
+	/><br />
+
+	<button>New Random Dog Image</button>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 20px;
+			padding: 0 20px;
+		}
+
+		main {
+			text-align: center;
+			margin: 0 auto;
+			max-width: 800px;
+		}
+
+		p {
+			text-align: left;
+			padding: 0 20px;
+		}
+
+		code {
+			color: firebrick;
+		}
+
+		img {
+			max-width: 400px;
+			height: auto;
+		}
+
+		button {
+			margin-top: 20px;
+		}
+	</style>
+	<script>
+		document.querySelector("button").addEventListener(
+			"click",
+			function () {
+				fetch("https://dog.ceo/api/breeds/image/random")
+					.then((response) => {
+						return response.json();
+					})
+					.then((myContent) => {
+						myImage.src = myContent["message"];
+					});
+			},
+			false
+		);
+	</script>
+</main>

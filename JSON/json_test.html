@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<title>JSON Course Assignment</title>
+		<h1>JSON Assignment</h1>
+		<a href="https://github.com/csusbdt/4050-2021/wiki/Syllabus"
+			>This is the course syllabus which shows the instructions for this
+			assignment.</a
+		>
+
+		<p><u>Below you can see a String written in JSON format: </u></p>
+		<p id="Data"></p>
+		<script>
+			var txt =
+				'{"FirstName":"Joseph", "MidName":"something", "LastName":"Hyatt", "Age": 35, "City":"Rancho Cucamonga"}';
+			var obj = JSON.parse(txt);
+			document.getElementById("Data").innerHTML =
+				"Name: " +
+				obj.FirstName +
+				" " +
+				obj.MidName +
+				" " +
+				obj.LastName +
+				", " +
+				"Age: " +
+				obj.Age +
+				", " +
+				"City: " +
+				obj.City;
+		</script>
+
+		<p>
+			<u>JSON Syntax is able to return JavaScript Notation, hence the name.</u>
+		</p>
+		<p id="Data(1)"></p>
+		<script>
+			var myObj, x, y, z;
+			myObj = { Name: "Joseph Hyatt", Age: 35, City: "Rancho Cucamonga" };
+			x = myObj.Name;
+			y = myObj.Age;
+			z = myObj.City;
+			document.getElementById("Data(1)").innerHTML =
+				x +
+				"'s place is " +
+				z +
+				" (inside the code, var 'y' is left out intentionally).";
+		</script>
+
+		<p><u>You are also able to exchange data with JSON Stringify.</u></p>
+		<p id="Data(2)"></p>
+		<script>
+			var student;
+			student = { ID: "007131989", Month: 10, Year: 85 };
+			var myJSON = JSON.stringify(student);
+			student["Year"] = 2021;
+			document.getElementById("Data(2)").innerHTML = myJSON;
+		</script>
+
+		<p>
+			<u
+				>You are also able to add for loops onto JSON as well as change or
+				delete the values within the for loop.</u
+			>
+		</p>
+		<p id="Data(3)"></p>
+		<img src="rocket.jpg" alt="Rocket" width="128" height="128" />
+		<script>
+			var NASA,
+				i,
+				x = "";
+			NASA = {
+				Example: "Lift off in t-minus:",
+				Rocket: [10, 9, 8, 7, 6, "Five", 4, 3, 2, 1, 0, "We Got Lift Off!"],
+			};
+			NASA.Rocket[5] = 5;
+			delete NASA.Rocket[10];
+			for (i in NASA.Rocket) {
+				x += NASA.Rocket[i] + "<br>";
+			}
+			document.getElementById("Data(3)").innerHTML = NASA.Example + "<br>" + x;
+		</script>
+		<hr />
+		<details>
+			<summary>Want to learn more about JSON? Click here.</summary>
+			<br /><br />
+			<a href="https://www.youtube.com/watch?v=iiADhChRriM"
+				>What is JSON? (check out this video overview)</a
+			>
+			<br /><br />
+			<b>JSON</b> stands for <b><i>J</i></b
+			>ava <b><i>S</i></b
+			>cript <b><i>O</i></b
+			>bject <b><i>N</i></b
+			>otation.
+			<br />
+			JSON is a syntax for storing and exchanging data. JSON is text, written
+			with JavaScript object notation.
+			<br /><br />
+			It is a language independent text format that holds the following data
+			types:
+			<br /><br />
+			String
+			<br />
+			Number
+			<br />
+			Boolean Function
+			<br />
+			Array (ordered list of differing values) and
+			<br />
+			Object (unordered list of various values i.e. name types).
+			<br /><br />
+			Essentially JSON is a wire protocol that helps serialize and de-serialize
+			data.
+			<br />
+			In layman terms, you can think of JSON as an language interpreter between
+			two people who don't speak the same language.
+		</details>
+	</body>
+</html>
